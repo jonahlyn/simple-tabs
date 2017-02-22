@@ -1,0 +1,141 @@
+<link rel="import" href="bower_components/polymer/polymer-element.html">
+
+<dom-module id="simple-tabs">
+
+  <template>
+
+    <style>
+      :host {
+        display: block;
+        position: relative;
+        overflow: hidden;
+        clear: both;
+        contain: content;
+      }
+      
+      div >::slotted(:not([selected])) {
+        display: none;
+      }
+      
+      div >::slotted(section) {
+        padding: 10px;
+      }
+      
+      .tabs {
+        list-style: none;
+        padding-left: 0;
+        margin: 0;
+      }
+      
+      .tabs li {
+        color: black;
+        float: left;
+        display: block;
+        padding: 4px 10px;
+        margin-left: -1px;
+        position: relative;
+        left: 1px;
+        background: white;
+        text-decoration: none;
+        font-family: sans-serif;
+      }
+      
+      .tabs li:hover,
+      .tabs li.active {
+        background: #ccc;
+        cursor: pointer;
+      }
+      
+      .group:after {
+        visibility: hidden;
+        display: block;
+        font-size: 0;
+        content: " ";
+        clear: both;
+        height: 0;
+      }
+    </style>
+
+    <ul id="tabs" class="tabs group"></ul>
+    <div>
+      <slot></slot>
+    </div>
+
+  </template>
+
+  <script>
+    class SimpleTabs extends Polymer.Element {
+
+      static get is() { return 'simple-tabs' }
+
+      static get config() {
+        return {
+          properties: {
+            selected: {
+              type: Object,
+              observer: '_selectedChanged'
+            }
+          }
+        };
+      }
+
+      connectedCallback() {
+        super.connectedCallback();
+
+        // Set the default tab. Use the section with the 'selected' attribute or the first section by default.
+        this.selected = document.querySelector('[selected]') || this.firstElementChild;
+        this._installListeners();
+      }
+
+      _installListeners() {
+        let elem = this.firstElementChild,
+            tab_group = this.$.tabs;
+
+        // Populate the navigation tabs and set event handlers
+        while (elem) {
+          let heading = elem.querySelector('h2').innerText,
+              elemId = elem.id,
+              tab = document.createElement('li');
+
+          tab.innerText = heading;
+          tab.setAttribute('for', elemId);
+          tab.addEventListener('click', this.selectTab.bind(this, elem));
+          tab_group.appendChild(tab);
+
+          elem = elem.nextElementSibling;
+        }
+
+        this._setActiveNav(this.selected.id);
+      }
+
+      selectTab(elem) {
+        // Set the section as selected
+        this.selected = elem;
+        this._setActiveNav(elem.id);
+      }
+
+      _setActiveNav(elemId) {
+        let tab_group = this.$.tabs;
+
+        // Add or remove an 'active' class from the tab associated with the section.
+        tab_group.childNodes.forEach(e => {
+          if (e.getAttribute('for') === elemId) {
+            e.classList.add('active');
+          } else {
+            e.classList.remove('active');
+          }
+        });
+      }
+
+      _selectedChanged(selected, oldSelected) {
+        if (oldSelected) { oldSelected.removeAttribute('selected'); };
+        if (selected) { selected.setAttribute('selected', ''); };
+      }
+
+    }
+
+    // Register this as a custom element.
+    customElements.define(SimpleTabs.is, SimpleTabs);
+  </script>
+
+</dom-module>

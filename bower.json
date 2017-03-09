@@ -1,7 +1,9 @@
 {
   "name": "simple-tabs",
+  "description": "A simple polymer element to display content in a tabbed interface.",
   "private": true,
+  "main": "simple-tabs.html",
   "dependencies": {
-    "polymer": "Polymer/polymer#2.0-preview"
+    "polymer": "Polymer/polymer#2.0.0-rc.1"
   }
 }

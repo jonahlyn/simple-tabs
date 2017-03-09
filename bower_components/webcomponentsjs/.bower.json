@@ -1,7 +1,7 @@
 {
   "name": "webcomponentsjs",
   "main": "webcomponents.js",
-  "version": "1.0.0-rc.5",
+  "version": "1.0.0-rc.4",
   "homepage": "http://webcomponents.org",
   "authors": [
     "The Polymer Authors"
@@ -25,13 +25,13 @@
     "template": "webcomponents/template#v1.0.0-rc.1",
     "webcomponents-platform": "webcomponents/webcomponents-platform#v1.0.0-rc.1"
   },
-  "_release": "1.0.0-rc.5",
+  "_release": "1.0.0-rc.4",
   "_resolution": {
     "type": "version",
-    "tag": "v1.0.0-rc.5",
-    "commit": "8c9be5dcc1a70fc4777e6d04204b375d5eda7e30"
+    "tag": "v1.0.0-rc.4",
+    "commit": "4c5a91b256af5febe2cb4020c2779680365ab51a"
   },
   "_source": "https://github.com/Polymer/webcomponentsjs.git",
-  "_target": "v1.0.0-rc.5",
+  "_target": "v1.0.0-rc.4",
   "_originalSource": "webcomponentsjs"
 }

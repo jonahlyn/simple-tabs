@@ -9,10 +9,8 @@
  */
 
 (function() {
-  'use strict';
-  var name = 'webcomponents-loader.js';
   // Feature detect which polyfill needs to be imported.
-  var polyfills = [];
+  let polyfills = [];
   if (!('import' in document.createElement('link'))) {
     polyfills.push('hi');
   }
@@ -34,11 +32,11 @@
   }
 
   if (polyfills.length) {
-    var script = document.querySelector('script[src*="' + name +'"]');
-    var newScript = document.createElement('script');
+    var script = document.querySelector('script[src*="webcomponents-loader.js"]');
+    let newScript = document.createElement('script');
     // Load it from the right place.
-    var replacement = 'webcomponents-' + polyfills.join('-') + '.js';
-    var url = script.src.replace(name, replacement);
+    var url = script.src.replace(
+      'webcomponents-loader.js', `webcomponents-${polyfills.join('-')}.js`);
     newScript.src = url;
     document.head.appendChild(newScript);
   } else {

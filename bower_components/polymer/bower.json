@@ -1,6 +1,6 @@
 {
   "name": "polymer",
-  "version": "2.0.0-rc.2",
+  "version": "2.0.0-preview",
   "main": [
     "polymer.html"
   ],
@@ -22,7 +22,7 @@
   },
   "dependencies": {
     "shadycss": "webcomponents/shadycss#v1.0.0-rc.1",
-    "webcomponentsjs": "v1.0.0-rc.5"
+    "webcomponentsjs": "v1.0.0-rc.4"
   },
   "devDependencies": {
     "web-component-tester": "^5",

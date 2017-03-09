@@ -1,6 +1,7 @@
 {
   "name": "webcomponentsjs",
   "main": "webcomponents.js",
+  "version": "1.0.0-rc.5",
   "homepage": "http://webcomponents.org",
   "authors": [
     "The Polymer Authors"
@@ -16,22 +17,21 @@
   "ignore": [],
   "devDependencies": {
     "web-component-tester": "^5",
-    "custom-elements": "webcomponents/custom-elements#master",
+    "custom-elements": "webcomponents/custom-elements#v1.0.0-rc.1",
     "es6-promise": "stefanpenner/es6-promise#^4.0.0",
-    "html-imports": "webcomponents/html-imports#master",
-    "shadydom": "webcomponents/shadydom#master",
-    "shadycss": "webcomponents/shadycss#master",
-    "template": "webcomponents/template#master",
-    "URL": "webcomponents/URL#master",
-    "webcomponents-platform": "webcomponents/webcomponents-platform#master"
+    "html-imports": "webcomponents/html-imports#v1.0.0-rc.1",
+    "shadydom": "webcomponents/shadydom#v1.0.0-rc.1",
+    "shadycss": "webcomponents/shadycss#v1.0.0-rc.1",
+    "template": "webcomponents/template#v1.0.0-rc.1",
+    "webcomponents-platform": "webcomponents/webcomponents-platform#v1.0.0-rc.1"
   },
-  "_release": "fd94b6329a",
+  "_release": "1.0.0-rc.5",
   "_resolution": {
-    "type": "branch",
-    "branch": "v1",
-    "commit": "fd94b6329a148eb5ad2b783d44aaffbc1685badc"
+    "type": "version",
+    "tag": "v1.0.0-rc.5",
+    "commit": "8c9be5dcc1a70fc4777e6d04204b375d5eda7e30"
   },
   "_source": "https://github.com/Polymer/webcomponentsjs.git",
-  "_target": "v1",
+  "_target": "v1.0.0-rc.5",
   "_originalSource": "webcomponentsjs"
 }

@@ -68,14 +68,12 @@
 
       static get is() { return 'simple-tabs' }
 
-      static get config() {
+      static get properties() {
         return {
-          properties: {
             selected: {
               type: Object,
               observer: '_selectedChanged'
             }
-          }
         };
       }
 
